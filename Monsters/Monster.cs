@@ -3,11 +3,12 @@ using ComputerGame.Monsters.Visitors;
 
 namespace ComputerGame.Monsters
 {
-    public interface IMonster{
+    public interface IMonster
+    {
         public void AcceptVisitor(IVisitor visitor);
     }
-    
-    public abstract class Monster : Obstacle
+
+    public abstract class Monster : Obstacle, IMonster
     {
         public Monster(Field field) : base(field)
         {
@@ -78,9 +79,6 @@ namespace ComputerGame.Monsters
                  Math.Abs(PositionY - player.PositionY) <= AttackRadius;
         }
 
-        public virtual void Attack()
-        {
-            System.Console.WriteLine($"Monster has damaged the player by {this.Damage} HP");
-        }
+        public virtual void AcceptVisitor(IVisitor visitor) { }
     }
 }

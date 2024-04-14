@@ -2,7 +2,7 @@ using ComputerGame.Monsters.Visitors;
 
 namespace ComputerGame.Monsters
 {
-    public class Wolf : Monster, IMonster
+    public class Wolf : Monster
     {
         public override int AttackRadius => 3;
         public override int Speed => 5;
@@ -10,8 +10,7 @@ namespace ComputerGame.Monsters
 
         public Wolf(Field field) : base(field) { }
 
-        public void AcceptVisitor(IVisitor visitor)
-        {
+        public override void AcceptVisitor(IVisitor visitor){
             visitor.Visit(this);
         }
     }
