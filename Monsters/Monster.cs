@@ -1,7 +1,12 @@
 using System;
+using ComputerGame.Monsters.Visitors;
 
-namespace ComputerGame
+namespace ComputerGame.Monsters
 {
+    public interface IMonster{
+        public void AcceptVisitor(IVisitor visitor);
+    }
+    
     public abstract class Monster : Obstacle
     {
         public Monster(Field field) : base(field)

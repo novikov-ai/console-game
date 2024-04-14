@@ -1,6 +1,8 @@
-namespace ComputerGame
+using ComputerGame.Monsters.Visitors;
+
+namespace ComputerGame.Monsters
 {
-    public class Wolf : Monster
+    public class Wolf : Monster, IMonster
     {
         public override int AttackRadius => 3;
         public override int Speed => 5;
@@ -8,9 +10,9 @@ namespace ComputerGame
 
         public Wolf(Field field) : base(field) { }
 
-        public override void Attack()
+        public void AcceptVisitor(IVisitor visitor)
         {
-            System.Console.WriteLine("Wolf has damaged the player");
+            visitor.Visit(this);
         }
     }
 }
