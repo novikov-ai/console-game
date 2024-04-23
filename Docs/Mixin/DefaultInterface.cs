@@ -1,4 +1,4 @@
-namespace VisitorsWithMixin
+namespace Mixin
 {
     public interface IBuilder
     {
