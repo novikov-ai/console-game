@@ -6,11 +6,6 @@ namespace VisitorsWithMixin
         {
             return builder.Invoke();
         }
-
-        public virtual void Display()
-        {
-            System.Console.WriteLine("Displaying by default");
-        }
     }
 
     public class Contractor : IBuilder
